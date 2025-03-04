@@ -24,10 +24,10 @@ Pp = A*P*A' + Q;
 
 K = Pp*H'*inv(H*Pp*H' + R);
 
-x = xp + K*(z - H*xp);     % x = [ q1 q2 q3 q4 ]
+x = xp + K*(z - H*xp);     %상태 변수 x = [ q1 q2 q3 q4 ]
 P = Pp - K*H*Pp;
 
-
+%%쿼터니언 추정값을 오일러 각도로 변환
 phi   =  atan2( 2*(x(3)*x(4) + x(1)*x(2)), 1 - 2*(x(2)^2 + x(3)^2) );
 theta = -asin(  2*(x(2)*x(4) - x(1)*x(3)) );
 psi   =  atan2( 2*(x(2)*x(3) + x(1)*x(4)), 1 - 2*(x(3)^2 + x(4)^2) );

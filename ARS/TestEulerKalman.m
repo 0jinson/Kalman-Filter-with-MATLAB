@@ -30,10 +30,14 @@ PsiSaved   = EulerSaved(:, 3) * 180/pi;
 t = 0:dt:Nsamples*dt-dt;
 
 figure
-plot(t, PhiSaved)
+plot(t, PhiSaved, 'r')
+xlabel('Time [sec]')
+ylabel('Roll angle [deg]')
 
 figure
-plot(t, ThetaSaved)
+plot(t, ThetaSaved, 'r')
+xlabel('Time [sec]')
+ylabel('Pitch angle [deg]')
 
-figure
-plot(t, PsiSaved)
+%figure
+%plot(t, PsiSaved, 'r')
